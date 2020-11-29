@@ -1,0 +1,28 @@
+{% extends "unit/base.html" %}
+{% block title %}All ASTS Airmen{% endblock %}
+{% block content %}
+    <h1>Airmen</h1>
+    {% for airman in airmen %}
+        <h2>
+            <a href="{{ airman.get_absolute_url }}">
+                <strong>{{ airman.rank }} {{ airman.last_name|capfirst }}, {{ airman.first_name|capfirst }}</strong>
+            </a>
+        </h2>
+        <p class="date">
+            Fitness Level:
+            {% if airman.fitness_level == 'Excellent' %}
+                <strong style="color: green;">{{ airman.fitness_level }}</strong>
+            {% elif airman.fitness_level == 'Satisfactory' or airman.fitness_level == 'Pass' %}
+                <strong style="color: orange;">{{ airman.fitness_level }}</strong>
+            {% elif airman.fitness_level == 'Unsatisfactory' or airman.fitness_level == 'Fail' %}
+                <strong style="color: red;">{{ airman.fitness_level }}</strong>
+            {% else %}
+                {{ airman.fitness_level }}
+            {% endif %}
+        </p>
+        <p class="date">
+            Test Date: {{ airman.test_date }}
+        </p>
+    {% endfor %}
+    {% include "pagination.html" with page=page_obj %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "unit/base.html" %}
+{% block title %}Failure, Unsatisfactory, & Non-Current{% endblock %}
+{% block content %}
+    <h1>Failure, Unsatisfactory, & Non-Current</h1>
+    {% for naughty in all_naughty_list %}
+        <h2>
+            <a href="{{ naughty.airman_id.get_absolute_url }}">
+                {{ naughty.airman_id}}
+            </a>
+        </h2>
+        <p class="date">
+            Failure/Unsatisfactory Date: {{ naughty.failure_date }}
+        </p>
+        <p class="date">
+            Be-Well Completion Date: {{ naughty.be_well_completion_date }}
+        </p>
+        <p class="date">
+            Status Level: {{ naughty.status_level }}
+        </p>
+    {% endfor %}
+{% endblock %}

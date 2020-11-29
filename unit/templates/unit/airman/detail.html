@@ -1,0 +1,37 @@
+{% extends "unit/base.html" %}
+{% block title %}{{ airman.rank }} {{ airman.first_name }} {{ airman.last_name }}{% endblock %}
+{% block content %}
+    <h1>{{ airman.rank }} {{ airman.first_name|capfirst }} {{ airman.last_name|capfirst }}</h1>
+    <p class="date">
+        Rank: {{ airman.rank }}
+        <br><br>
+        SSN: {{ airman.ssn }}
+        <br><br>
+        Test Date: {{ airman.test_date }}
+        <br><br>
+        Fitness Level:
+        {% if airman.fitness_level == 'Excellent' %}
+            <strong style="color: green;">{{ airman.fitness_level }}</strong>
+        {% elif airman.fitness_level == 'Satisfactory' or airman.fitness_level == 'Pass' %}
+            <strong style="color: orange;">{{ airman.fitness_level }}</strong>
+        {% elif airman.fitness_level == 'Unsatisfactory' or airman.fitness_level == 'Fail' %}
+            <strong style="color: red;">{{ airman.fitness_level }}</strong>
+        {% else %}
+            {{ airman.fitness_level }}
+        {% endif %}
+        <br><br>
+        PTL:
+        {% if airman.ptl %}
+            Yes
+        {% else %}
+            No
+        {% endif %}
+        <br><br>
+        UFPM:
+        {% if airman.ufpm %}
+            Yes
+        {% else %}
+            No
+        {% endif %}
+    </p>
+{% endblock %}

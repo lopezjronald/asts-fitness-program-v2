@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static "css/unit.css" %}" rel="stylesheet">
+</head>
+
+<body>
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+<div id="sidebar">
+    <h2>349 ASTS Fitness Program</h2>
+    <p>Flight ~ Fight ~ Win</p>
+    <p><a href="{% url "unit:airman_list" %}">Home</a></p>
+    <p><a href="{% url "unit:airman_search" %}">Search Airman</a></p>
+    <p><a href="{% url "unit:all_naughty_list" %}">Fail/Satisfactory/Non-Current List</a></p>
+    <p><a href="{% url "unit:all_profile_list" %}">List of Profiles</a></p>
+    <p><a href="{% url "unit:all_ptl_list" %}">Physical Training Leaders</a></p>
+    <p><a href="{% url "unit:all_ufpm_list" %}">Unit Fitness Program Managers</a></p>
+</div>
+</body>
+</html>

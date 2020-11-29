@@ -1,0 +1,21 @@
+{% extends "unit/base.html" %}
+{% block title %}Unit Fitness Program Managers{% endblock %}
+{% block content %}
+    <h1>Unit Fitness Program Managers</h1>
+    {% for ufpm in all_ufpm_list %}
+        <h2>
+            <a href="{{ ufpm.airman_id.get_absolute_url }}">
+                {{ ufpm.airman_id}}
+            </a>
+        </h2>
+        <p class="date">
+            Certification Date: {{ ufpm.ufpm_certification_date }}
+        </p>
+        <p class="date">
+            Expiration Date: {{ ufpm.ufpm_expiration_date }}
+        </p>
+        <p class="date">
+            {{ ufpm.ptl_id }}
+        </p>
+    {% endfor %}
+{% endblock %}
