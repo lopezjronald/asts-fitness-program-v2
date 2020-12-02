@@ -137,7 +137,7 @@ class NaughtyAdmin(admin.ModelAdmin):
 @admin.register(UnitFitnessProgramManager)
 class UnitFitnessProgramManagerAdmin(admin.ModelAdmin):
     list_display = ('airman_id', 'ufpm_certification_date', 'ufpm_expiration_date')
-    list_editable = ('ptl_id', 'ufpm_certification_date', 'ufpm_expiration_date',)
+    list_editable = ('ufpm_certification_date', 'ufpm_expiration_date',)
     list_filter = ('ufpm_expiration_date',)
     date_hierarchy = 'ufpm_expiration_date'
     ordering = ('-ufpm_expiration_date',)
