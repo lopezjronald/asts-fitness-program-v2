@@ -96,8 +96,8 @@ class AirmanAdmin(admin.ModelAdmin):
     list_filter = ('fitness_level',)
     search_fields = ('first_name', 'last_name', 'ssn')
     prepopulated_fields = {'airman_slug': ('ssn',)}
-    date_hierarchy = 'last_name'
-    ordering = ('test_date', 'last_name')
+    date_hierarchy = 'test_Date'
+    ordering = ('last_name', 'first_name')
     actions_on_bottom = True
     actions_on_top = True
 
