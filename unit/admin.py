@@ -66,8 +66,6 @@ class AirmanAdmin(admin.ModelAdmin):
     #           ('ptl', 'ufpm'),
     #           'active_status')
 
-    save_on_top = True
-
     fieldsets = (
         ('AIRMAN INFORMATION', {
             'fields': ('rank', ('first_name', 'middle_initial', 'last_name'), 'ssn')
@@ -98,8 +96,8 @@ class AirmanAdmin(admin.ModelAdmin):
     prepopulated_fields = {'airman_slug': ('ssn',)}
     date_hierarchy = 'test_date'
     ordering = ('last_name', 'first_name')
+    save_on_top = True
     actions_on_bottom = True
-    actions_on_top = True
 
 
 # @admin.register(Physical_Training_Leader)
