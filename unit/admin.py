@@ -88,8 +88,8 @@ class AirmanAdmin(admin.ModelAdmin):
     )
     readonly_fields = ('airman_id',)
     list_display = (
-        'ssn', 'rank', 'first_name', 'middle_initial', 'last_name', 'test_date', 'fitness_level', 'active_status',)
-    list_display_links = ('ssn',)
+        'airman_id', 'ssn', 'rank', 'first_name', 'middle_initial', 'last_name', 'test_date', 'fitness_level', 'active_status',)
+    list_display_links = ('airman_id',)
     list_editable = (
         'ssn', 'rank', 'test_date', 'fitness_level', 'active_status',)
     list_filter = ('first_name', 'last_name', 'test_date', 'fitness_level',)
