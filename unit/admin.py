@@ -91,7 +91,7 @@ class AirmanAdmin(admin.ModelAdmin):
         'ssn', 'rank', 'first_name', 'middle_initial', 'last_name', 'test_date', 'fitness_level', 'active_status',)
     list_display_links = ('ssn',)
     list_editable = (
-        'rank', 'first_name', 'middle_initial', 'last_name', 'test_date', 'fitness_level', 'active_status',)
+        'ssn', 'rank', 'test_date', 'fitness_level', 'active_status',)
     list_filter = ('first_name', 'last_name', 'test_date', 'fitness_level',)
     search_fields = ('first_name', 'last_name', 'ssn')
     prepopulated_fields = {'airman_slug': ('ssn',)}
