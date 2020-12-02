@@ -47,9 +47,9 @@ class Airman(models.Model):
     fitness_level = models.CharField(max_length=50,
                                      choices=FITNESS_CHOICE,
                                      default='satisfactory')
-    rank = models.CharField(max_length=10,
+    rank = models.CharField(max_length=15,
                             choices=RANK_CHOICE,
-                            default='AB')
+                            default='E-1/AB')
     first_name = models.CharField(max_length=20)
     middle_initial = models.CharField(max_length=5)
     last_name = models.CharField(max_length=20)
