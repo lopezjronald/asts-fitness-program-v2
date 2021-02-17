@@ -53,6 +53,8 @@ class Airman(models.Model):
     first_name = models.CharField(max_length=20)
     middle_initial = models.CharField(max_length=5)
     last_name = models.CharField(max_length=20)
+    phone_number = models.CharField(max_length=15,
+                                    null=True)
     ssn = models.CharField(max_length=11)
     airman_slug = models.SlugField(max_length=50,
                                    unique_for_date='test_date')

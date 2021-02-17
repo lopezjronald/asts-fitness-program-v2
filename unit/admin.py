@@ -68,7 +68,7 @@ class AirmanAdmin(admin.ModelAdmin):
 
     fieldsets = (
         ('AIRMAN INFORMATION', {
-            'fields': ('rank', ('first_name', 'middle_initial', 'last_name'), 'ssn')
+            'fields': ('rank', ('first_name', 'middle_initial', 'last_name'), ('ssn', 'phone_number'),)
         }),
         ('FITNESS INFORMATION', {
             'fields': (('fitness_level', 'test_date'),),
@@ -86,13 +86,13 @@ class AirmanAdmin(admin.ModelAdmin):
     )
     readonly_fields = ('airman_id',)
     list_display = (
-        'ssn', 'rank', 'last_name', 'first_name', 'middle_initial', 'test_date', 'fitness_level',
+        'ssn', 'rank', 'last_name', 'first_name', 'middle_initial', 'phone_number', 'test_date', 'fitness_level',
         'active_status',)
     list_display_links = ('ssn',)
     list_editable = (
-        'rank', 'test_date', 'fitness_level', 'active_status',)
+        'rank', 'phone_number', 'test_date', 'fitness_level', 'active_status',)
     list_filter = ('fitness_level', 'active_status',)
-    search_fields = ('first_name', 'last_name', 'ssn')
+    search_fields = ('first_name', 'last_name', 'ssn', 'phone_number')
     prepopulated_fields = {'airman_slug': ('ssn',)}
     date_hierarchy = 'test_date'
     ordering = ('last_name', 'first_name')
